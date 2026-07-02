@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>本人確認</title>
+<style>
+body{
+  font-family:sans-serif;
+  max-width:500px;
+  margin:60px auto;
+  padding:20px;
+}
+input{
+  width:100%;
+  padding:12px;
+  margin-top:5px;
+  box-sizing:border-box;
+}
+button{
+  width:100%;
+  margin-top:20px;
+  padding:15px;
+  background:#0078d4;
+  color:white;
+  border:none;
+  border-radius:5px;
+  cursor:pointer;
+}
+</style>
+</head>
+<body>
+
+<h2>本人確認</h2>
+
+<p>
+氏名をご入力のうえ、本人確認へお進みください。
+</p>
+
+<label>氏名</label>
+<input type="text" id="name" placeholder="例：山田 太郎">
+
+<button onclick="goEkyc()">
+本人確認に進む
+</button>
+
+<script>
+function goEkyc() {
+  const name = document.getElementById('name').value;
+
+  if(!name){
+    alert('氏名を入力してください');
+    return;
+  }
+
+  const ekycUrl =
+    'https://本人確認システムURL';
+
+  window.location.href = ekycUrl;
+}
+</script>
+
+</body>
+</html>
